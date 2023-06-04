@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guide to Prompt Writing</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guide to Prompt Writing</h1>
+    <h2>Prompt Writing Best Practices</h2>
+    <ul>
+        <li><strong>Separate instruction and context:</strong> Clearly distinguish between the instruction and the context with markers such as ### or """.
+            <br>Example:
+            <br>Less effective ❌: Translate the text below into French. {text input here}
+            <br>Better ✅: Translate the text below into French. Text: """ {text input here} """
+        </li>
+        <li><strong>Be specific and detailed:</strong> Give precise instructions about the desired context, outcome, length, format, style, etc.
+            <br>Example:
+            <br>Less effective ❌: Write a story about a young wizard.
+            <br>Better ✅: Write a suspenseful short story about a young wizard who has just discovered his powers, set in a modern urban environment.
+        </li>
+        <li><strong>Articulate the desired output format through examples:</strong> Show the desired format in examples.
+            <br>Example:
+            <br>Less effective ❌: Summarize the key points from the text below.
+            <br>Better ✅: Summarize the key points from the text below. Desired format: Key Point 1: _, Key Point 2: _, etc. Text: {text}
+        </li>
+        <li><strong>Zero-shot, then few-shot, then fine-tune:</strong> Start with zero-shot prompts, then few-shot examples, and then fine-tuning if needed.</li>
+        <li><strong>Reduce “fluffy” and imprecise descriptions:</strong> Be concise and clear in your instructions.
+            <br>Example:
+            <br>Less effective ❌: Write a decent amount of content about the topic.
+            <br>Better ✅: Write a detailed 500-word article about the topic.
+        </li>
+        <li><strong>Say what to do instead of just what not to do:</strong> Clearly instruct on what needs to be done instead of just highlighting what should be avoided.
+            <br>Example:
+            <br>Less effective ❌: The character should not be sad or upset.
+            <br>Better ✅: The character should exhibit feelings of excitement and joy.
+        </li>
+        <li><strong>For code generation, use “leading words”:</strong> Use certain leading words to steer the model towards a particular pattern.
+            <br>Example:
+            <br>Less effective ❌: Write a function to perform the following task.
+            <br>Better ✅: def function_name(): # Write a function to perform the following task.
+        </li>
+    </ul>
+    <h2>Parameters</h2>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>Use it to adjust the randomness of the output. Higher values lead to more creative output.</td>
+        </tr>
+        <tr>
+            <td>Max_tokens</td>
